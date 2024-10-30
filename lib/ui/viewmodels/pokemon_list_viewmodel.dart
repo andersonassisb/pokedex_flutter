@@ -24,8 +24,6 @@ class PokemonListViewModel extends ChangeNotifier {
       final restoredPokemons = await storageRepository.restore();
       final bool alreadyExistsCachedPokemons = restoredPokemons != null;
 
-      print(restoredPokemons);
-
       if( alreadyExistsCachedPokemons && restoredPokemons.length > offset) {
         pokemons.addAll(restoredPokemons);
       } else {
